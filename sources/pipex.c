@@ -6,7 +6,7 @@
 /*   By: sderozie <sderozie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:09:49 by byanis            #+#    #+#             */
-/*   Updated: 2023/05/04 12:48:56 by sderozie         ###   ########.fr       */
+/*   Updated: 2023/05/04 12:54:43 by sderozie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ static void	child_process_start(int *fd, char **argv, char **envp)
 	close(infile);
 	dup2(fd[FD_WRITE_END], STDOUT_FILENO);
 	close(fd[FD_WRITE_END]);
-	// arg_cmd = split_cmd_arg(argv[2]);
 	arg_cmd = ft_split(argv[2], ' ');
 	if (access(arg_cmd[0], X_OK) == 0)
 		path = ft_strdup(arg_cmd[0]);
@@ -58,7 +57,6 @@ static	void	child_process_end(int *fd, char **argv, char **envp)
 	dup2(fd[FD_READ_END], STDIN_FILENO);
 	close(fd[FD_READ_END]);
 	dup2(outfile, STDOUT_FILENO);
-	// arg_cmd = split_cmd_arg(argv[3]);
 	arg_cmd = ft_split(argv[3], ' ');
 	if (access(arg_cmd[0], X_OK) == 0)
 		path = ft_strdup(arg_cmd[0]);

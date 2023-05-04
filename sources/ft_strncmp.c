@@ -6,11 +6,11 @@
 /*   By: sderozie <sderozie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 21:29:51 by sderozie          #+#    #+#             */
-/*   Updated: 2023/05/04 11:07:22 by sderozie         ###   ########.fr       */
+/*   Updated: 2023/05/04 12:55:39 by sderozie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pipex.h"
+#include "pipex.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t len)
 {

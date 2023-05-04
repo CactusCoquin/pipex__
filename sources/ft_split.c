@@ -6,11 +6,11 @@
 /*   By: sderozie <sderozie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:17:07 by sderozie          #+#    #+#             */
-/*   Updated: 2023/05/04 11:07:53 by sderozie         ###   ########.fr       */
+/*   Updated: 2023/05/04 12:55:15 by sderozie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pipex.h"
+#include "pipex.h"
 
 static unsigned int	ft_check_sep(char c, char c2)
 {

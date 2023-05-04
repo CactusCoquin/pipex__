@@ -6,11 +6,11 @@
 /*   By: sderozie <sderozie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 15:30:00 by sderozie          #+#    #+#             */
-/*   Updated: 2023/05/04 11:07:40 by sderozie         ###   ########.fr       */
+/*   Updated: 2023/05/04 12:55:23 by sderozie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pipex.h"
+#include "pipex.h"
 
 char	*ft_strdup(const char *s)
 {

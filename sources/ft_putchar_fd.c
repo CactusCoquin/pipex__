@@ -6,11 +6,11 @@
 /*   By: sderozie <sderozie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:14:04 by sderozie          #+#    #+#             */
-/*   Updated: 2023/05/04 11:06:17 by sderozie         ###   ########.fr       */
+/*   Updated: 2023/05/04 12:55:01 by sderozie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pipex.h"
+#include "pipex.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

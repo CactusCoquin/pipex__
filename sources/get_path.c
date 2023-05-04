@@ -6,7 +6,7 @@
 /*   By: sderozie <sderozie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:08:54 by byanis            #+#    #+#             */
-/*   Updated: 2023/05/04 12:50:26 by sderozie         ###   ########.fr       */
+/*   Updated: 2023/05/04 12:54:31 by sderozie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,3 @@ void	get_path(char *cmd, char *envp[], char **f_path)
 	}
 	free_matrix(paths);
 }
-
-// char	**split_cmd_arg(char *argv)
-// {
-// 	char	**cmd_arg;
-
-// 	cmd_arg = ft_split(argv, ' ');
-// 	return (cmd_arg);
-// }
