@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sderozie <sderozie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 12:07:49 by byanis            #+#    #+#             */
-/*   Updated: 2023/05/04 12:51:28 by sderozie         ###   ########.fr       */
+/*   Created: 2023/05/05 16:16:33 by sderozie          #+#    #+#             */
+/*   Updated: 2023/05/05 18:06:23 by sderozie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,15 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include <string.h>
+# include <stdbool.h>
 
 # define FD_WRITE_END 1
 # define FD_READ_END 0
 
-/* Get path */
-
-void	get_path(char *cmd, char *envp[], char **f_path);
-
-/* Utils */
-
+void	get_path(char *cmd, char **envp, char **f_path);
 void	free_matrix(char **matrix);
 char	**split_cmd_arg(char *argv);
-void	check_argv(int argc);
-void	check_fd(int fd, char *file);
+bool	check_args(int argc, char **argv);
 
 /* Libft */
 char	**ft_split(const char *s, char c);

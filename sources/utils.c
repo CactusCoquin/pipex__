@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sderozie <sderozie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 12:08:47 by byanis            #+#    #+#             */
-/*   Updated: 2023/05/04 12:50:51 by sderozie         ###   ########.fr       */
+/*   Created: 2023/05/05 16:17:25 by sderozie          #+#    #+#             */
+/*   Updated: 2023/05/05 18:07:36 by sderozie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,24 @@ void	free_matrix(char **matrix)
 	free(matrix);
 }
 
-void	check_argv(int argc)
+bool	check_args(int argc, char **argv)
 {
-	if (argc != 5)
-	{
-		printf("Arg: ./pipex infile command1 command2 outfile\n");
-		exit(0);
-	}
-}
+	int	i;
+	int	i2;
 
-void	check_fd(int fd, char *file)
-{
-	if (fd == -1)
+	if (argc != 5)
+		return (false);
+	i = 2;
+	while (i < 4)
 	{
-		ft_putstr_fd("pipex: no such file or directory: ", 2);
-		ft_putendl_fd(file, 2);
-		exit(0);
+		i2 = 0;
+		while (argv[i][i2])
+		{
+			if (argv[i][i2] != ' ' && argv[i][i2] != '\t')
+				return (true);
+			i2++;
+		}
+		i++;
 	}
+	return (false);
 }

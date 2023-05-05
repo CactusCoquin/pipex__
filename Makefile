@@ -1,6 +1,6 @@
 NAME = pipex
-CC = clang #-g -fsanitize=address
-CFLAGS = -I./includes
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS_DIR = sources
 SRCS =  pipex.c get_path.c utils.c ft_putchar_fd.c \
@@ -14,21 +14,18 @@ OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(OBJS_LIBFT)
-	@$(CC) $(OBJS) $(LFLAGS) -o $(NAME)
+$(NAME): $(OBJS)
+	$(CC) $(OBJS) -o $(NAME)
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
-	@mkdir -p $(OBJS_DIR)
-	@echo "Compiling $< \033[0;32m✔\033[0m"
-	@$(CC) -Wall -Wextra -Werror -I/usr/include -O3 $(CFLAGS) -c $< -o $@
+	mkdir -p $(OBJS_DIR)
+	$(CC) $(CFLAGS) -I./includes -c $< -o $@
 
 clean:
-	@rm -rf $(OBJS_DIR)
-	@echo "===> Objects deleted"
+	rm -rf $(OBJS_DIR)
 
 fclean: clean
-	@rm -f $(NAME)
-	@echo "===> Binaries deleted"
+	rm -f $(NAME)
 
 re: fclean all
 

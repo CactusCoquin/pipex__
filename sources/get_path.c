@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sderozie <sderozie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 12:08:54 by byanis            #+#    #+#             */
-/*   Updated: 2023/05/04 12:54:31 by sderozie         ###   ########.fr       */
+/*   Created: 2023/05/05 16:17:03 by sderozie          #+#    #+#             */
+/*   Updated: 2023/05/05 18:17:16 by sderozie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-static char	*find_path(char *envp[])
+static char	*find_path(char **envp)
 {
 	int	i;
 
@@ -26,14 +26,14 @@ static char	*find_path(char *envp[])
 	return (NULL);
 }
 
-void	get_path(char *cmd, char *envp[], char **f_path)
+void	get_path(char *cmd, char **envp, char **f_path)
 {
 	char	**paths;
 	char	*path;
 	char	*path_cmd;
 	int		i;
-	int		fd;
 
+	*f_path = NULL;
 	i = 0;
 	paths = ft_split(ft_strchr(find_path(envp), '/'), ':');
 	while (paths[i])
@@ -41,12 +41,10 @@ void	get_path(char *cmd, char *envp[], char **f_path)
 		path = ft_strjoin(paths[i], "/");
 		path_cmd = ft_strjoin(path, cmd);
 		free(path);
-		fd = open(path_cmd, O_RDONLY);
-		if (fd >= 0)
+		if (access(path_cmd, X_OK) == 0)
 		{
 			*f_path = path_cmd;
 			free_matrix(paths);
-			close(fd);
 			return ;
 		}
 		free(path_cmd);
